@@ -1,0 +1,9 @@
+html{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    text-align: center;
+}
+body{
+    background-color: rgb(50, 50, 60);
+}
