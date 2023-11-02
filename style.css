@@ -7,3 +7,55 @@ html{
 body{
     background-color: rgb(50, 50, 60);
 }
+
+
+#content-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+#Tapes{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-top: 5%;
+}
+.Tapes{
+    max-width: 80%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+
+#Recorder{
+    max-width: 30%;
+    margin-left: 20%;
+}
+
+
+
+
+
+
+#VolUp,#VolDown{
+    opacity: 0;
+}
+
+
+
+#TopSpokes{
+    transform-origin: 1101.9px 531.4px;
+}
+#BotSpokes{
+    transform-origin: 1101.9px 684px;
+}
+.Spinner{
+    animation: spin 8s infinite linear;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
