@@ -5,7 +5,7 @@ html{
     text-align: center;
 }
 body{
-    background-color: rgb(50, 50, 60);
+    background-color: rgb(70, 70, 95);
 }
 
 
@@ -37,9 +37,6 @@ body{
 
 
 
-
-
-
 #VolUp,#VolDown{
     opacity: 0;
 }
@@ -58,4 +55,8 @@ body{
 @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
+}
+
+.not-clickable{
+    pointer-events: none;
 }
