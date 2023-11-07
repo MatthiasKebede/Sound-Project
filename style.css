@@ -14,7 +14,26 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+#Tapecover{
+    position: absolute;
+    background-color: black;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    opacity: 0.5;
+}
+#Droptarget{
+    position: absolute;
+    background-color: grey;
+    display: none;
+    top: 35%;
+    right: 2%;
+    width: 25%;
+    height: 30%;
+    border: 1px solid black;
+}
 
 
 #Tapes{
@@ -22,11 +41,12 @@ body{
     flex-direction: column;
     width: 20%;
     margin-top: 5%;
+    margin-left: 1%;
 }
 .Tapes{
-    max-width: 80%;
-    margin-left: 5%;
+    max-width: 90%;
     margin-bottom: 10%;
+    margin-top: 1%;
 }
 
 

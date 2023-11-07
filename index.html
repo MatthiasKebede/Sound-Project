@@ -18,11 +18,13 @@
         <audio id="audio1" src="./assets/ice.mp3">Audio not supported</audio>
         <audio id="audio2" src="./assets/ice.mp3">Audio not supported</audio>
         <audio id="audio3" src="./assets/ice.mp3">Audio not supported</audio>
+        <audio id="audio-conclusion" src="./assets/ice.mp3">Audio not supported</audio>
     </div>
 
 
     <div id="content-area">
         <div id="Tapes">
+            <div draggable="true" id="Chose Tape 1">
             <svg version="1.1" class="Tapes" id="Tape1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="69 576 598 380" xml:space="preserve">
                 <style type="text/css">
@@ -106,7 +108,9 @@
                 <rect id="Nameplate" x="160.2" y="611.5" class="st28" width="414.8" height="61.7"/>
                 <text transform="matrix(1 0 0 1 286.9481 656.0153)" class="st29 st30 st31">Name 1</text>
             </svg>
+            </div>
 
+            <div draggable="true" id="Chose Tape 2">
             <svg version="1.1" class="Tapes" id="Tape2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="69 576 598 380" xml:space="preserve">
                 <style type="text/css">
@@ -183,7 +187,9 @@
                 <rect id="Nameplate" x="160.2" y="611.5" class="st28" width="414.8" height="61.7"/>
                 <text transform="matrix(1 0 0 1 286.9481 656.0153)" class="st29 st30 st31">Name 2</text>
             </svg>
+            </div>
 
+            <div draggable="true" id="Chose Tape 3">
             <svg version="1.1" class="Tapes" id="Tape3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="69 576 598 380" xml:space="preserve">
                 <style type="text/css">
@@ -260,7 +266,10 @@
                 <rect id="Nameplate" x="160.2" y="611.5" class="st28" width="414.8" height="61.7"/>
                 <text transform="matrix(1 0 0 1 286.9481 656.0153)" class="st29 st30 st31">Name 3</text>
             </svg>
+            </div>
         </div>
+
+        <div id="Tapecover" style="display: block;"></div>
 
         <svg version="1.1" id="Recorder" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="854 230 708 1186" xml:space="preserve">
@@ -289,6 +298,7 @@
                 .st21{fill:#565B5E;stroke:#2F3233;stroke-width:2;stroke-miterlimit:10;}
                 .st22{fill:#565B5E;}
                 .st23{fill:url(#Speaker_00000132080765606356794040000001693727932166593681_);}
+                .st24{font-size: 36px;}
             </style>
             <pattern  x="1665" y="538" width="17.5" height="17.5" patternUnits="userSpaceOnUse" id="Speaker_00000132080765606356794040000001693727932166593681_" viewBox="0 -17.5 17.5 17.5" style="overflow:visible;">
                 <g>
@@ -406,7 +416,12 @@
                 </g>
             </g>
             <polygon id="Speaker" class="st23" points="1308,1354.3 932.2,1354.3 932.2,1006.4 1333.2,1006.4 1333.2,1328.1 "/>
+            <rect id="Now-Playing" x="910" y="915" class="st8" width="450" height="70"/>
+            <text id="now-playing-name" transform="matrix(1 0 0 1 920 965)" class="st29 st30 st24">Introduction - - - -</text>
+            <text id="now-playing-time" transform="matrix(1 0 0 1 1195 965)" class="st29 st30 st24">0:00 / 0:00</text>
         </svg>
+
+        <div id="Droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </div>
 
     
