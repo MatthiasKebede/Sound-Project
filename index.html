@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sound Project</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <!-- <link rel="icon" href="./assets/ico.png"/> -->
+    <link rel="icon" href="./assets/police tape.png"/>
 </head>
 <body>
-    <!-- <div id="Header">
-
-    </div> -->
+    <!-- <div id="Header"><h1>The Heist</h1></div> -->
 
 
     <div id="audio-storage">
@@ -19,12 +17,14 @@
         <audio id="audio2" src="./assets/ice.mp3">Audio not supported</audio>
         <audio id="audio3" src="./assets/ice.mp3">Audio not supported</audio>
         <audio id="audio-conclusion" src="./assets/ice.mp3">Audio not supported</audio>
+
+        <audio id="click" src="./assets/click.wav">Audio not supported (click)</audio>
     </div>
 
 
     <div id="content-area">
         <div id="Tapes">
-            <div draggable="true" id="Chose Tape 1">
+            <div draggable="true" id="Chose-Tape-1" ondragstart="dragStart(event)">
             <svg version="1.1" class="Tapes" id="Tape1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="69 576 598 380" xml:space="preserve">
                 <style type="text/css">
@@ -110,7 +110,7 @@
             </svg>
             </div>
 
-            <div draggable="true" id="Chose Tape 2">
+            <div draggable="true" id="Chose-Tape-2" ondragstart="dragStart(event)">
             <svg version="1.1" class="Tapes" id="Tape2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="69 576 598 380" xml:space="preserve">
                 <style type="text/css">
@@ -189,7 +189,7 @@
             </svg>
             </div>
 
-            <div draggable="true" id="Chose Tape 3">
+            <div draggable="true" id="Chose-Tape-3" ondragstart="dragStart(event)">
             <svg version="1.1" class="Tapes" id="Tape3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="69 576 598 380" xml:space="preserve">
                 <style type="text/css">
@@ -425,7 +425,17 @@
     </div>
 
     
-
+    <div id="end-screen" style="display: none; color: whitesmoke;">
+        <div id="border-box"></div>
+        <h1 style="position: absolute; top: 35%; left: 23%;">Who was the Culprit?</h1>
+        <p style="position: absolute; top: 43%; left: 25%;">
+            <span id="result1" style="color: #06bd00; font-weight: bold;">You and x%</span> <span id="result2">of people chose: Name</span>
+        </p>
+        <div id="topbar" class="bars">23% &nbsp</div>
+        <div id="midbar" class="bars">59% &nbsp</div>
+        <div id="botbar" class="bars">18% &nbsp</div>
+        <div id="piechart"></div>
+    </div>
 
 
 

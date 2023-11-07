@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 html{
     color: black;
     font-family: 'Times New Roman', Times, serif;
@@ -8,11 +12,16 @@ body{
     background-color: rgb(70, 70, 95);
 }
 
-
+/* #Header{
+    height: 8vh;
+    background-color: darkslateblue;
+    color: whitesmoke;
+} */
 #content-area{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /* position: relative; */
 }
 #Tapecover{
     position: absolute;
@@ -46,13 +55,14 @@ body{
 .Tapes{
     max-width: 90%;
     margin-bottom: 10%;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 
 #Recorder{
-    max-width: 30%;
+    max-width: 28%;
     margin-left: 20%;
+    margin-top: 1%;
 }
 
 
@@ -61,8 +71,61 @@ body{
     opacity: 0;
 }
 
+.not-clickable{
+    pointer-events: none;
+}
+
+#border-box{
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    border: 2px solid black;
+    z-index: -1;
+}
+#piechart{ 
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%;
+    border: 1px solid black;
+    background-image: conic-gradient( 
+        #45b2ffd1 82.8deg,  
+        #ff4545d1 0 295.2deg,  
+        #06bd00d1 0);
+    position: absolute;
+    left: 55%;
+    top: 25%;
+}
+.bars{
+    position: absolute;
+    /* width: 250px; */
+    height: 20px;
+    border: 1px solid black;
+    text-align: right;
+    color: black;
+}
+#topbar{
+    background-color: #45b2ffd1;
+    top: 50%;
+    left: 25%;
+    width: 130px;
+}
+#midbar{
+    background-color: #ff4545d1;
+    top: 55%;
+    left: 25%;
+    width: 250px;
+}
+#botbar{
+    background-color: #06bd00d1;
+    top: 60%;
+    left: 25%;
+    width: 90px;
+}
 
 
+/* Animations */
 #TopSpokes{
     transform-origin: 1101.9px 531.4px;
 }
@@ -77,6 +140,7 @@ body{
     to {transform:rotate(360deg);}
 }
 
-.not-clickable{
-    pointer-events: none;
+.curtain{
+    opacity: 0;
+    transition: opacity 2s linear 2s;
 }
