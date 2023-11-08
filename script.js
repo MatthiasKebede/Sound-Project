@@ -52,6 +52,7 @@ tape1.addEventListener("click", function() {
     pauseMode();
     tapeColor.setAttribute("class", "st26");
     currentaudio = document.getElementById("audio1");
+    currentaudio.currentTime = 0;
     currentaudio.addEventListener("ended", pauseMode);
     currentaudio.addEventListener("timeupdate", timeStamp);
     currentname.textContent = "Marcus - - - - - - -";
@@ -61,6 +62,7 @@ tape2.addEventListener("click", function() {
     pauseMode();
     tapeColor.setAttribute("class", "st32");
     currentaudio = document.getElementById("audio2");
+    currentaudio.currentTime = 0;
     currentaudio.addEventListener("ended", pauseMode);
     currentaudio.addEventListener("timeupdate", timeStamp);
     currentname.textContent = "Lucia - - - - - - - -";
@@ -70,6 +72,7 @@ tape3.addEventListener("click", function() {
     pauseMode();
     tapeColor.setAttribute("class", "st33");
     currentaudio = document.getElementById("audio3");
+    currentaudio.currentTime = 0;
     currentaudio.addEventListener("ended", pauseMode);
     currentaudio.addEventListener("timeupdate", timeStamp);
     currentname.textContent = "Tyrell - - - - - - - -";
@@ -174,7 +177,7 @@ function timeStamp() {
     playtime.textContent = timestamp + " / " + endtime;
 }
 
-// Prompt answer
+// Prompt user response
 function bossKnock() {
     // Set attributes for conclusion "tape"
     currentaudio = document.getElementById("audio-conclusion");
