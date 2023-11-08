@@ -1,4 +1,5 @@
 console.log("check");
+var completed = [];
 
 
 // // HTML Elements
@@ -7,6 +8,7 @@ var contents = document.getElementById("content-area");
 var recorder = document.getElementById("Recorder");
 var tapecover = document.getElementById("Tapecover");
 var droptarget = document.getElementById("Droptarget");
+var bosscover = document.getElementById("bosscover");
 var afterword = document.getElementById("end-screen")
 // Buttons
 var recordButton = document.getElementById("RecButton");
@@ -24,6 +26,7 @@ var tape2 = document.getElementById("Tape2");
 var tape3 = document.getElementById("Tape3");
 // Audio
 var click = document.getElementById("click"); click.volume = 0.25;
+var boss = document.getElementById("audio-conclusion");
 // For animation
 var topWheel = document.getElementById("TopSpokes");
 var botWheel = document.getElementById("BotSpokes");
@@ -39,6 +42,9 @@ volumeDown.addEventListener("click", decreaseVolume);
 playButton.addEventListener("click", playAudio);
 currentaudio.addEventListener("ended", pauseMode);
 currentaudio.addEventListener("timeupdate", timeStamp);
+boss.addEventListener("ended", prepEnd);
+boss.addEventListener("timeupdate", timeStamp);
+
 
 // Update current tape's attributes when selecting a new tape
 tape1.addEventListener("click", function() {
@@ -48,7 +54,7 @@ tape1.addEventListener("click", function() {
     currentaudio = document.getElementById("audio1");
     currentaudio.addEventListener("ended", pauseMode);
     currentaudio.addEventListener("timeupdate", timeStamp);
-    currentname.textContent = "Name1 - - - - - - -";
+    currentname.textContent = "Marcus - - - - - - -";
 })
 tape2.addEventListener("click", function() {
     currentaudio.pause();
@@ -57,7 +63,7 @@ tape2.addEventListener("click", function() {
     currentaudio = document.getElementById("audio2");
     currentaudio.addEventListener("ended", pauseMode);
     currentaudio.addEventListener("timeupdate", timeStamp);
-    currentname.textContent = "Name2 - - - - - - -";
+    currentname.textContent = "Lucia - - - - - - - -";
 })
 tape3.addEventListener("click", function() {
     currentaudio.pause();
@@ -66,7 +72,7 @@ tape3.addEventListener("click", function() {
     currentaudio = document.getElementById("audio3");
     currentaudio.addEventListener("ended", pauseMode);
     currentaudio.addEventListener("timeupdate", timeStamp);
-    currentname.textContent = "Name3 - - - - - - -";
+    currentname.textContent = "Tyrell - - - - - - - -";
 })
 
 
@@ -112,11 +118,21 @@ function playMode() {
     botWheel.classList.add("Spinner");
 }
 function pauseMode() {
+    // Mark tape as completed/visited
+    if (!completed.includes(currentaudio.getAttribute("id"))) {
+        completed.push(currentaudio.getAttribute("id"))
+        console.log(completed);
+    }
+    // Unlock tape selection after listening to intro
     if (currentaudio.getAttribute("id") == "intro-audio") {
         tapecover.style.display = "none";
-        droptarget.style.display = "block";
-        recorder.style.marginLeft = "12%";
     }
+    // Play conclusion audio after tapes have been played
+    else if (completed.length == 4 && droptarget.style.display != "block") {
+        bosscover.style.display = "block";
+        setTimeout(bossKnock, 3000);
+    }
+    // Push play button back out, stop wheel animation
     playButton.style.opacity = 1;
     topWheel.classList.remove("Spinner");
     botWheel.classList.remove("Spinner");
@@ -135,9 +151,10 @@ function resetAll() {
     tapecover.style.display = "block";
     droptarget.style.display = "none";
     recorder.style.marginLeft = "20%";
-    document.getElementById("Tapes").appendChild(document.getElementById("Chose-Tape-1"));
-    document.getElementById("Tapes").appendChild(document.getElementById("Chose-Tape-2"));
-    document.getElementById("Tapes").appendChild(document.getElementById("Chose-Tape-3"));
+    completed = [];
+    // document.getElementById("Tapes").appendChild(document.getElementById("Chose-Tape-1"));
+    // document.getElementById("Tapes").appendChild(document.getElementById("Chose-Tape-2"));
+    // document.getElementById("Tapes").appendChild(document.getElementById("Chose-Tape-3"));
 }
 
 // Timestamp for audio
@@ -178,30 +195,45 @@ function drop(event) {
 
 // Submit answer and show results
 function finalAnswer(answer) {
-    console.log("You chose: Tape " + answer.slice(-1));
     var percentage;
     switch (answer) {
-        case "Chose-Tape-1":
+        case "Marcus":
             // code block
             percentage = 23;
-
             break;
-        case "Chose-Tape-2":
+        case "Lucia":
             // code block
             percentage = 59;
-
             break;
-        case "Chose-Tape-3":
+        case "Tyrell":
             // code block
             percentage = 18;
-
             break;
         default:
             console.log("answer error");
+            percentage = 33;
+            answer = "Jameson";
     }
     contents.style.display = "none";
     currentaudio.pause(); pauseMode();
     afterword.style.display = "block";
     document.getElementById("result1").textContent = "You and " + percentage + "%" 
-    document.getElementById("result2").textContent = " of people chose: Tape " + answer.slice(-1);
+    document.getElementById("result3").textContent = answer;
+}
+
+// Prompt answer
+function bossKnock() {
+    // Set attributes for conclusion "tape"
+    currentaudio = document.getElementById("audio-conclusion");
+    currentaudio.currentTime = 0;
+    currentname.textContent = "Decision time - - - "
+    tapeColor.setAttribute("class", "st8");
+    // Play audio and prepare submission box on completion
+    currentaudio.play();
+}
+function prepEnd() {
+    // Display submission box, move recorder over
+    bosscover.style.display = "none";
+    droptarget.style.display = "block";
+    recorder.style.marginLeft = "12%";
 }
