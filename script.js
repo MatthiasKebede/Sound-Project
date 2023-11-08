@@ -82,9 +82,10 @@ tape3.addEventListener("click", function() {
 // // Functions
 // Play/Pause audio, show button being pressed in
 function playAudio() {
-    // play a clicking sound
+    // Play a clicking sound
     click.currentTime = 0;
     click.play();
+    // Handle playing/pausing audio
     if (!currentaudio.paused) {
         currentaudio.pause();
         pauseMode();
@@ -173,6 +174,23 @@ function timeStamp() {
     playtime.textContent = timestamp + " / " + endtime;
 }
 
+// Prompt answer
+function bossKnock() {
+    // Set attributes for conclusion "tape"
+    currentaudio = document.getElementById("audio-conclusion");
+    currentaudio.currentTime = 0;
+    currentname.textContent = "Decision time - - - "
+    tapeColor.setAttribute("class", "st8");
+    // Play audio and prepare submission box on completion
+    currentaudio.play();
+}
+function prepEnd() {
+    // Display submission box, move recorder over
+    bosscover.style.display = "none";
+    droptarget.style.display = "block";
+    recorder.style.marginLeft = "12%";
+}
+
 // Drag and drop a tape to submit your answer
 function dragStart(event) {
     event.dataTransfer.setData("text/plain", event.currentTarget.id);
@@ -219,21 +237,4 @@ function finalAnswer(answer) {
     afterword.style.display = "block";
     document.getElementById("result1").textContent = "You and " + percentage + "%" 
     document.getElementById("result3").textContent = answer;
-}
-
-// Prompt answer
-function bossKnock() {
-    // Set attributes for conclusion "tape"
-    currentaudio = document.getElementById("audio-conclusion");
-    currentaudio.currentTime = 0;
-    currentname.textContent = "Decision time - - - "
-    tapeColor.setAttribute("class", "st8");
-    // Play audio and prepare submission box on completion
-    currentaudio.play();
-}
-function prepEnd() {
-    // Display submission box, move recorder over
-    bosscover.style.display = "none";
-    droptarget.style.display = "block";
-    recorder.style.marginLeft = "12%";
 }
