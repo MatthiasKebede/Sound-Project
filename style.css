@@ -33,6 +33,18 @@ body{
     height: 100%;
     opacity: 0.5;
 }
+#subtitles{
+    display: none;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    height: 50%;
+    width: 27%;
+    color: whitesmoke;
+    font-size: inherit;
+    font-weight: inherit;
+    word-wrap: break-word;
+}
 #Droptarget{
     position: absolute;
     background-color: grey;

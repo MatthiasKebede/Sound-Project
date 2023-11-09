@@ -11,12 +11,12 @@
     <!-- <div id="Header"><h1>The Heist</h1></div> -->
 
 
-    <div id="audio-storage">
+    <div id="audio-storage" style="display: none;">
         <audio id="intro-audio" src="./assets/ice.mp3">Audio not supported</audio>
-        <audio id="audio1" src="./assets/ice.mp3">Audio not supported</audio>
-        <audio id="audio2" src="./assets/ice.mp3">Audio not supported</audio>
+        <audio id="audio1" src="./assets/Marcus.mp3">Audio not supported</audio>
+        <audio id="audio2" src="./assets/Lucia.mp3">Audio not supported</audio>
         <audio id="audio3" src="./assets/ice.mp3">Audio not supported</audio>
-        <audio id="audio-conclusion" src="./assets/ice.mp3">Audio not supported</audio>
+        <audio id="audio-conclusion" src="./assets/click.wav">Audio not supported</audio>
 
         <audio id="click" src="./assets/click.wav">Audio not supported (click)</audio>
     </div>
@@ -421,8 +421,16 @@
             <text id="now-playing-time" transform="matrix(1 0 0 1 1195 965)" class="st29 st30 st24">0:00 / 0:00</text>
         </svg>
 
+
+        <div id="subtitles">
+            <span id="sub-title" style="font-weight: bolder; font-size: x-large;">The Introduction</span>
+            <br><br>
+            <span id="sub-script" style="padding-top: 1%; text-align: left; line-height: 2; white-space: pre-line;"></span>
+        </div>
+        
+
         <div id="Droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div>
+        </div>
 
     
     <div id="bosscover" style="display: none;"></div>
