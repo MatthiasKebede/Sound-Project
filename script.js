@@ -238,6 +238,7 @@ tape1.addEventListener("click", function() {
     currentaudio = document.getElementById("audio1");
     currentaudio.currentTime = 0;
     prevtime = 0;
+    subTitle.textContent = "";
     subScript.textContent = "";
     subSection = 0;
     subsubSection = 1;
@@ -253,6 +254,7 @@ tape2.addEventListener("click", function() {
     currentaudio = document.getElementById("audio2");
     currentaudio.currentTime = 0;
     prevtime = 0;
+    subTitle.textContent = "";
     subScript.textContent = "";
     subSection = 0;
     subsubSection = 1;
@@ -268,6 +270,7 @@ tape3.addEventListener("click", function() {
     currentaudio = document.getElementById("audio3");
     currentaudio.currentTime = 0;
     prevtime = 0;
+    subTitle.textContent = "";
     subScript.textContent = "";
     subSection = 0;
     subsubSection = 1;
@@ -324,7 +327,7 @@ function pauseMode() {
     // Mark tape as completed/visited
     if (!completed.includes(currentaudio.getAttribute("id"))) {
         completed.push(currentaudio.getAttribute("id"))
-        console.log(completed);
+        // console.log(completed);
     }
     // Unlock tape selection after listening to intro
     if (currentaudio.getAttribute("id") == "intro-audio") {
@@ -356,6 +359,7 @@ function resetAll() {
     currentaudio.volume = 1;
     currentaudio.currentTime = 0;
     prevtime = 0;
+    subTitle.textContent = "";
     subScript.textContent = "";
     subSection = 0;
     subsubSection = 1;
@@ -550,6 +554,7 @@ function timeStamp() {
                 break;
             default:
                 // erase text
+                subTitle.textContent = "";
                 subScript.textContent = "";
         }
         prevtime += 1;
