@@ -155,13 +155,16 @@ var scripts = [
             Did you notice anyone else acting strange?\n`,
 
             `TYRELL
-            Lucia was too calm, and she pocketed something when the lights snapped back. And Marcus... he's too slippery.\n`,
+            Lucia was too calm, and she pocketed something when the lights snapped back. And Marcus... he's too slippery.\n`],
 
-            `DETECTIVE JAMESON
+            [`DETECTIVE JAMESON
             Anything else you can add?\n`,
 
             `TYRELL
-            The boss was in deep with some bad people. This heist... it was his ticket out. Maybe they didn't want him leaving.`]]
+            The boss was in deep with some bad people. This heist... it was his ticket out. Maybe they didn't want him leaving.\n`,
+        
+            `DETECTIVE JAMESON
+            Thank you very much for your time.`]]
 ]
 var prevtime = 0;
 var subSection = 0;
@@ -518,11 +521,11 @@ function timeStamp() {
                     subsubSection = 5;
                 }
                 // Section 1
-                if (now == 25) {
+                if (now == 24) {
                     subSection = 1;
                     subsubSection = 1;
                 }
-                if (now == 30) {
+                if (now == 31) {
                     subsubSection = 2;
                 }
                 if (now == 35) {
@@ -531,25 +534,33 @@ function timeStamp() {
                 if (now == 40) {
                     subsubSection = 4;
                 }
-                if (now == 45) {
+                if (now == 44) {
                     subsubSection = 5;
                 }
-                if (now == 50) {
-                    subsubSection = 6;
-                }
                 // Section 2
-                if (now == 55) {
+                if (now == 51) {
                     subSection = 2;
                     subsubSection = 1;
                 }
-                if (now == 60) {
+                if (now == 56) {
                     subsubSection = 2;
                 }
-                if (now == 65) {
+                if (now == 64) {
                     subsubSection = 3;
                 }
-                if (now == 70) {
+                if (now == 67) {
                     subsubSection = 4;
+                }
+                // Section 3
+                if (now == 76) {
+                    subSection = 3;
+                    subsubSection = 1;
+                }
+                if (now == 79) {
+                    subsubSection = 2;
+                }
+                if (now == 90) {
+                    subsubSection = 3;
                 }
                 break;
             default:
